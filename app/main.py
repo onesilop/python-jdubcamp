@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI, Depends, Request, HTTPException
-from fastapi.middleware.sessions import SessionMiddleware
+from starlette.middleware.sessions import SessionMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from sqlalchemy.orm import Session
 from .database import Base, engine, get_db

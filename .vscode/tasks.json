@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install dependencies",
+      "type": "shell",
+      "command": "python3 -m pip install -r requirements.txt",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run app",
+      "type": "shell",
+      "command": "uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+      "options": {
+        "envFile": "${workspaceFolder}/.env"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run tests",
+      "type": "shell",
+      "command": "pytest",
+      "problemMatcher": [
+        "$pytest"
+      ]
+    }
+  ]
+}
