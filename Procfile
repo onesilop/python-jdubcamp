@@ -1,1 +1,1 @@
-web: cd /app && python -m pip install --disable-pip-version-check -r requirements.txt && python -m uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
+web: python -c "import os, subprocess, sys; root = '/app' if os.path.exists('/app/requirements.txt') else os.getcwd(); os.chdir(root); subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--disable-pip-version-check', '-r', 'requirements.txt']); subprocess.check_call([sys.executable, '-m', 'uvicorn', 'app.main:app', '--host', '0.0.0.0', '--port', os.environ.get('PORT', '8000')])"
